@@ -7,5 +7,6 @@
     eval(data)
     function send (data) { event.source.postMessage(data, event.origin) } 
   }
+  window.opener.postMessage({ type: 'ready' }, '*')
   </script></body>
 </html>
