@@ -1,12 +1,9 @@
+
 <!doctype html>
 <html>
   <head><meta charset="utf-8"></head>
   <body><script>
-  onmessage = event => {
-    const { data } = event
-    eval(data)
-    function send (data) { event.source.postMessage(data, event.origin) } 
-  }
-  window.opener.postMessage({ type: 'ready' }, '*')
+    onmessage = ({data}) => eval(data)
+    ;(opener||parent).postMessage(0, '*')
   </script></body>
 </html>
